@@ -36,6 +36,7 @@
     animation: rotate 2s linear infinite;
     height: 98.3vh;
     margin: 0;
+    overflow: hidden;
 }
 
 .container {
