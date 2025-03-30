@@ -1,0 +1,83 @@
+@property --rotate {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.display {
+    height: 100px;
+    width: 100px;
+    border-style: solid;
+    border-width: 5px;
+    background-color: rgb(100,100,100);
+    border-image: conic-gradient(from var(--rotate) ,violet, indigo, blue, green, yellow, orange, red, violet) 1;
+
+    transform: translateX(calc(var(--varX) + -57px)) translateY(calc(var(--varY) + -57px));
+
+    transition: transform 0.1s ease-out;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        --rotate: 0deg;
+    }
+
+    to {
+        --rotate: 360deg;
+    }
+}
+
+.index {
+    background-color: black;
+    border-style: solid;
+    border-width: 5px;
+    border-image: conic-gradient(from var(--rotate) ,violet, indigo, blue, green, yellow, orange, red, violet) 1;
+    animation: rotate 2s linear infinite;
+    height: 98.3vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container a {
+    background-color: black;
+    border: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: black;
+    z-index: 10;
+}
+
+.whybody {
+    display: flex;
+    height: 98.3vh;
+    margin: 0;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    border-style: solid;
+    border-width: 5px;
+    border-image: conic-gradient(from var(--rotate) ,violet, indigo, blue, green, yellow, orange, red, violet) 1;
+
+    animation: rotate 2s linear infinite reverse;
+}
+
+.whybody a {
+    margin-top: 300px;
+    padding: 10px 20px;
+    border: 2px solid white;
+    background-color: rgb(20,20,20);
+    border-radius: 10px;
+    color:white;
+    text-decoration: none;
+}
+
+.whybody h1 {
+    color: white;
+}
